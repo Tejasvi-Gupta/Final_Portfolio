@@ -1,0 +1,86 @@
+/* ============================================================
+   components/About/About.css
+   ============================================================ */
+
+#about {
+  background: var(--card);
+  border-radius: 24px;
+  margin: 0 4%;
+  padding: 80px 6%;
+  border: 1px solid var(--border);
+  transition: background 0.35s, border-color 0.35s;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Stat cards */
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 2rem;
+}
+.stat-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  transition: background 0.35s, border-color 0.35s;
+}
+.stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  color: var(--charcoal);
+  line-height: 1;
+  transition: color 0.35s;
+}
+.stat-label {
+  font-size: 11px;
+  color: var(--mid);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  transition: color 0.35s;
+}
+
+/* Body copy */
+.about-body p {
+  color: var(--stone);
+  margin-bottom: 1rem;
+  font-size: 15px;
+  line-height: 1.8;
+  transition: color 0.35s;
+}
+.about-body p strong { color: var(--charcoal); font-weight: 500; transition: color 0.35s; }
+
+.focus-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1.5rem 0 2rem;
+}
+.focus-tag {
+  font-size: 12px;
+  color: var(--stone);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 20px;
+  transition: background 0.35s, color 0.35s, border-color 0.35s;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  #about { margin: 0 2%; }
+}
+
+@media (max-width: 400px) {
+  #about { margin: 0 1%; padding: 44px 4%; border-radius: 14px; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+}

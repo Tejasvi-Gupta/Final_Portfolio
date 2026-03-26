@@ -1,0 +1,103 @@
+/* ============================================================
+   components/Navbar/Navbar.css
+   ============================================================ */
+
+nav.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; height: 64px;
+  background: var(--nav-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.35s, border-color 0.35s;
+}
+
+.nav-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 19px; color: var(--charcoal);
+  text-decoration: none; letter-spacing: -0.02em;
+  transition: color 0.35s; z-index: 201; flex-shrink: 0;
+}
+
+.nav-right {
+  display: flex; align-items: center; gap: 1.5rem;
+}
+
+.nav-links {
+  display: flex; gap: 1.8rem; list-style: none;
+}
+.nav-links a {
+  font-size: 11px; font-weight: 400; color: var(--stone);
+  text-decoration: none; letter-spacing: 0.07em; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--charcoal); }
+
+/* ── Theme toggle ── */
+.theme-toggle {
+  width: 44px; height: 24px;
+  background: var(--surface); border: 1px solid var(--border-mid);
+  border-radius: 12px; cursor: pointer; position: relative;
+  transition: background 0.3s, border-color 0.3s;
+  flex-shrink: 0; outline: none;
+}
+.theme-toggle:focus-visible { box-shadow: 0 0 0 2px var(--rose); }
+.toggle-knob {
+  position: absolute; top: 3px; left: 3px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--charcoal);
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), background 0.3s;
+  display: flex; align-items: center; justify-content: center;
+}
+[data-theme="dark"] .toggle-knob { transform: translateX(20px); background: var(--rose); }
+.toggle-icon { font-size: 10px; line-height: 1; user-select: none; }
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 36px; height: 36px;
+  background: transparent; border: none; cursor: pointer;
+  padding: 4px; border-radius: 8px; z-index: 201;
+  transition: background 0.2s;
+}
+.hamburger:hover { background: var(--surface); }
+.hamburger span {
+  display: block; width: 20px; height: 1.5px;
+  background: var(--charcoal); border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s, background 0.35s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ── Mobile drawer ── */
+.mobile-nav {
+  display: flex; flex-direction: column; gap: 0;
+  position: fixed; top: 64px; left: 0; right: 0; z-index: 199;
+  background: var(--nav-bg);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 5% 1.5rem;
+  transform: translateY(-8px); opacity: 0;
+  visibility: hidden; pointer-events: none;
+  transition: transform 0.3s, opacity 0.3s, visibility 0.3s, background 0.35s;
+}
+.mobile-nav.open {
+  transform: translateY(0); opacity: 1;
+  visibility: visible; pointer-events: auto;
+}
+.mobile-nav a {
+  display: block; padding: 12px 0;
+  font-size: 13px; font-weight: 400; color: var(--stone);
+  text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase;
+  border-bottom: 1px solid var(--border); transition: color 0.2s;
+}
+.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav a:hover { color: var(--charcoal); }
+
+@media (max-width: 680px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}

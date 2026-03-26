@@ -1,0 +1,139 @@
+/* ============================================================
+   styles/globals.css
+   CSS custom properties (design tokens) + base resets
+   ============================================================ */
+
+/* ── THEMES ── */
+:root,
+[data-theme="light"] {
+  --bg:            #F6F4F2;
+  --surface:       #DDD9D5;
+  --card:          #FDFCFB;
+  --mid:           #9E9890;
+  --stone:         #55504A;
+  --charcoal:      #262320;
+  --rose:          #C4A09C;
+  --rose-dark:     #8a6360;
+  --rose-deep:     #6B3836;
+  --border:        rgba(38,35,32,0.10);
+  --border-mid:    rgba(38,35,32,0.18);
+  --nav-bg:        rgba(246,244,242,0.90);
+  --contact-bg:    #262320;
+  --contact-text:  #F6F4F2;
+  --contact-muted: rgba(246,244,242,0.60);
+  --contact-input: rgba(255,255,255,0.06);
+  --contact-ibord: rgba(255,255,255,0.09);
+  --shadow:        rgba(38,35,32,0.10);
+  --radius:        12px;
+}
+
+[data-theme="dark"] {
+  --bg:            #181614;
+  --surface:       #2A2724;
+  --card:          #201E1B;
+  --mid:           #7A756F;
+  --stone:         #B8B2A8;
+  --charcoal:      #EDE9E4;
+  --rose:          #C4A09C;
+  --rose-dark:     #D4B2AE;
+  --rose-deep:     #E8CECA;
+  --border:        rgba(255,255,255,0.08);
+  --border-mid:    rgba(255,255,255,0.14);
+  --nav-bg:        rgba(24,22,20,0.92);
+  --contact-bg:    #2A2724;
+  --contact-text:  #EDE9E4;
+  --contact-muted: rgba(237,233,228,0.55);
+  --contact-input: rgba(255,255,255,0.06);
+  --contact-ibord: rgba(255,255,255,0.10);
+  --shadow:        rgba(0,0,0,0.35);
+  --radius:        12px;
+}
+
+/* ── BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--charcoal);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background 0.35s, color 0.35s;
+}
+
+/* ── SHARED SECTION LAYOUT ── */
+section { padding: 100px 8%; }
+
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  margin-bottom: 0.4rem;
+  transition: color 0.35s;
+}
+
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--charcoal);
+  margin-bottom: 3rem;
+  transition: color 0.35s;
+}
+.section-title em { font-style: italic; color: var(--rose-dark); transition: color 0.35s; }
+
+/* ── FADE-UP ANIMATION ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── SHARED BUTTONS ── */
+.btn-primary {
+  background: var(--charcoal);
+  color: var(--bg);
+  padding: 12px 26px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s, color 0.35s;
+  white-space: nowrap;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--stone); transform: translateY(-2px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--charcoal);
+  padding: 12px 26px;
+  border-radius: var(--radius);
+  border: 1px solid var(--surface);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  display: inline-block;
+}
+.btn-outline:hover { border-color: var(--mid); background: rgba(158,152,144,0.10); transform: translateY(-2px); }
+
+/* ── RESPONSIVE: MOBILE ── */
+@media (max-width: 768px) {
+  section { padding: 70px 5%; }
+  .section-title { font-size: clamp(28px, 7vw, 40px); }
+}
+
+@media (max-width: 400px) {
+  section { padding: 60px 3%; }
+}
