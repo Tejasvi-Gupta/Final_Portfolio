@@ -10,23 +10,23 @@ export const personal = {
     "A passionate CSE student exploring AI, Cloud, and Web — turning ideas into real-world tech solutions, one commit at a time.",
   photo: "Portfoolio_image.jpeg",        // place in /public
   status: "Open to internships",
-  cgpa: "9.04",
+  cgpa: "8.76",
   graduatingYear: "2028",
   resumeUrl: "#",                         // replace with your actual resume URL
-  email: "tejasviigupta@gmail.com",       // replace with real email
+  email: "parthgupta966@gmail.com",       // replace with real email
   github: "https://github.com/Tejasvi-Gupta",
   linkedin: "https://www.linkedin.com/in/tejasvi-gupta08",
 };
 
 export const stats = [
-  { num: "9.04", label: "Current CGPA" },
+  { num: "8.76", label: "Current CGPA" },
   { num: "2+",   label: "Years of coding" },
   { num: "3+",   label: "Projects built" },
   { num: "2028", label: "Graduating" },
 ];
 
 export const aboutParagraphs = [
-  `I'm <strong>Tejasvi Gupta</strong>, a B.Tech CSE student at <strong>KIET Deemed to Be University, Ghaziabad</strong>, currently in my 2nd year with a CGPA of 9.04.`,
+  `I'm <strong>Tejasvi Gupta</strong>, a B.Tech CSE student at <strong>KIET Deemed to Be University, Ghaziabad</strong>, currently in my 2nd year with a CGPA of 8.76.`,
   `I'm deeply passionate about <strong>Artificial Intelligence and emerging technologies</strong>. My focus areas span DevOps foundations, AWS & Google Cloud platforms, UI/UX design with Figma, full-stack web development, and competitive programming.`,
   `I believe in learning by building — whether it's an AI-powered tutor, a data visualization dashboard, or a real-world safety application. Always pushing my boundaries and open to meaningful collaboration.`,
 ];
